@@ -3,7 +3,7 @@ Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 try {
     Import-Module ImportExcel
 
-    $xlsxFolder = "D:\OpCon-Files\MANTL\PROD\TEST"
+    $xlsxFolder = "D:\OpCon-Files\MANTL\PROD\FUNDING"
     $date = Get-Date -Format "yyyyMMdd"  
 
     Write-Host "Searching for files in: $xlsxFolder"
