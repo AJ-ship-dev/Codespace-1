@@ -3,7 +3,7 @@ Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 try {
     Import-Module ImportExcel
 
-    $xlsxFolder = "D:\OpCon-Files\MANTL\PROD\FUNDING"
+    $xlsxFolder = ""
     $date = Get-Date -Format "yyyyMMdd"  
 
     Write-Host "Searching for files in: $xlsxFolder"
@@ -21,7 +21,7 @@ try {
 
         Write-Host "CSV data saved as Excel: $newCsvFilePath"
         
-        $destinationPath = "\\WILFSV1\Branches\OPERATIONSSUPPORT\EFT Services\Mantl Balancing Reports\"
+        $destinationPath = ""
         Write-Host "Moving file to destination: $destinationPath"
 
         Move-Item -Path $newCsvFilePath -Destination $destinationPath
