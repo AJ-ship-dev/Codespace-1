@@ -20,6 +20,13 @@ try {
         $csvData | Export-Excel -Path $newCsvFilePath -AutoSize -TableName "SimplifiedTable"
 
         Write-Host "CSV data saved as Excel: $newCsvFilePath"
+        
+        $destinationPath = "\\WILFSV1\Branches\OPERATIONSSUPPORT\EFT Services\Mantl Balancing Reports\"
+        Write-Host "Moving file to destination: $destinationPath"
+
+        Move-Item -Path $newCsvFilePath -Destination $destinationPath
+
+        Write-Host "File moved successfully to $destinationPath"
     } else {
         Write-Host "Error: No CSV file found matching pattern 'simplified_reports__funding.csv' in $xlsxFolder"
     }
@@ -29,4 +36,3 @@ try {
 } finally {
     Set-ExecutionPolicy -Scope Process -ExecutionPolicy Restricted
     Write-Host "Execution policy restored to Restricted."
-}
